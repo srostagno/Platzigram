@@ -1,0 +1,26 @@
+{
+  "name": "Platzigram",
+  "version": "1.0.0",
+  "description": "Platzigram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanchezcarlos1986/Platzi.git"
+  },
+  "author": "Carlos Sánchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanchezcarlos1986/Platzi/issues"
+  },
+  "homepage": "https://github.com/sanchezcarlos1986/Platzi",
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.3.1",
+    "gulp-watch": "^4.3.5",
+    "nib": "^1.1.0"
+  }
+}
