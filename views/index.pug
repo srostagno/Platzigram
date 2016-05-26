@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+html(lang="es")
+head
+	meta(charset="UTF-8")
+	title Platzigram
+	meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+	link(href='https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script' rel='stylesheet' type='text/css')
+	link(rel="stylesheet" href="./public/app.css")
+body
+	section#main-container
+	.container
+		.row
+		.col.s10.push-s1
+			.row
+			.col.m5.hide-on-small-only
+				img.iphone(src='./public/img/iphone.png', alt='iphone')
+			.col.m7.s12
+				.row
+				.signup-box
+					h1.platzigram Platzigram
+					form.signup-form(action='')
+					h2 Regístrate!
+					.section
+						a.btn.btn-fb.hide-on-small-only Iniciar Sesión con Facebook
+						a.btn.btn-fb.hide-on-med-and-up Iniciar Sesión
+					.divider
+					.section
+						input(type='email', name='email', placeholder='Correo Electrónico')
+						input(type='text', name='name', placeholder='Nombre Completo')
+						input(type='text', name='username', placeholder='Nombre de Usuario')
+						input(type='password', name='password', placeholder='Contraseña')
+						button.btn.waves-effect.waves-light(type='submit') Regístrate
+				.row
+				.login-box
+					| ¿Tienes una cuenta? 
+					a(href='/signin') Entrar
+	footer.site-footer
+	.container
+		.row
+		.col.s12.l3.center-align
+			a.dropdown-button.btn(href='#', data-activates='dropdown1') Idiomas
+			ul#dropdown1.dropdown-content
+			li
+				a(href='#!') Español
+			li
+				a(href='#!') English
+		.col.s12.l3.center-align.push-l6
+			| © 2016 Platzigram
+	
+script(src="https://code.jquery.com/jquery-2.1.1.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js")

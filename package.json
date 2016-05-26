@@ -1,26 +1,32 @@
 {
-  "name": "Platzigram",
-  "version": "1.0.0",
-  "description": "Platzigram",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "platzigram",
+  "version": "0.1.0",
+  "description": "Comparte tus fotos estudiando con la comunidad de Platzi",
+  "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanchezcarlos1986/Platzi.git"
+    "url": "git+https://github.com/sanchezcarlos1986/Platzigram.git"
   },
+  "keywords": [
+    "platzi",
+    "platzigram",
+    "javascript",
+    "js"
+  ],
   "author": "Carlos Sánchez",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sanchezcarlos1986/Platzi/issues"
+    "url": "https://github.com/sanchezcarlos1986/Platzigram/issues"
   },
-  "homepage": "https://github.com/sanchezcarlos1986/Platzi",
+  "homepage": "https://github.com/sanchezcarlos1986/Platzigram#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "materialize-css": "^0.97.6",
+    "pug": "^0.1.0"
+  },
   "devDependencies": {
-    "browser-sync": "^2.12.8",
     "gulp": "^3.9.1",
-    "gulp-stylus": "^2.3.1",
-    "gulp-watch": "^4.3.5",
-    "nib": "^1.1.0"
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1"
   }
 }
