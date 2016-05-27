@@ -4,6 +4,8 @@ var app = express();
 
 app.set('view engine','pug'); //Utiliza pug(anteriormente llamado Jade)
 
+app.use(express.static('public'));
+
 app.get('/', function(req, res){
 	res.render('index.pug');
 });
