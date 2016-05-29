@@ -20,25 +20,22 @@
   },
   "homepage": "https://github.com/sanchezcarlos1986/Platzigram#readme",
   "dependencies": {
-    "empty-element": "^1.0.0",
     "express": "^4.13.4",
-    "materialize-css": "^0.97.6",
-    "page": "^1.7.1",
-    "pug": "^0.1.0",
-    "title": "^1.0.0",
-    "yo-yo": "^1.2.0"
+    "pug": "^0.1.0"
   },
   "devDependencies": {
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
+    "browser-sync": "^2.12.10",
     "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.1",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^2.0.8",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-stylus": "^2.4.0",
+    "gulp-uglify": "^1.5.3",
+    "nib": "^1.1.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
-    "build": "gulp",
-    "start": "node server.js & gulp watch"
+    "build": "gulp"
   }
 }
