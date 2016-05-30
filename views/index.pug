@@ -1,9 +1,8 @@
-html(ng-app="platzigramApp")
+html
 	head
 	title Platzigram
-	link(rel='stylesheet' type='text/css' href='css/font-awesome.min.css')
-	link(rel='stylesheet' type='text/css' href='css/materialize.min.css')
-	link(rel='stylesheet' type='text/css' href='css/app.css')
+	link(rel='stylesheet' type='text/css' href='build.min.css')
+	link(rel='stylesheet' type='text/css' href='app.css')
 	link(rel='apple-touch-icon', sizes='57x57', href='/apple-icon-57x57.png')
 	link(rel='apple-touch-icon', sizes='60x60', href='/apple-icon-60x60.png')
 	link(rel='apple-touch-icon', sizes='72x72', href='/apple-icon-72x72.png')
@@ -25,18 +24,17 @@ html(ng-app="platzigramApp")
 	meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no')
 	meta(charset='utf-8')
 
-	body(ng-controller="PlatzigramController")
-		h1 Platzigram
-		ui-view
+	body(ng-app="platzigramApp")
+		h1 ...
+		ng-view
 
 		script#__bs_script__(type='text/javascript').
 			//<![CDATA[
-			document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.2.12.10.js'><\/script>".replace("HOST", location.hostname));
+			document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.12.10.js'><\/script>".replace("HOST", location.hostname));
 			//]]>
 
-	script(src='js/jquery-2.1.1.min.js')
-	script(src='js/materialize.min.js')
+	script(src='build.min.js')
 	script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js')
-	script(src='js/angular-ui-router.min.js')
-	script(src='js/app.js')
+	script(src='https://code.angularjs.org/1.5.5/angular-route.min.js')
+	script(src='app.js')
 	script(src='js/controllers.js')

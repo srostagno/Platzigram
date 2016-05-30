@@ -1,8 +1,1 @@
-(function(){
-	angular.module('platzigram.controllers', [])
-
-	.controller('PlatzigramController', ['$scope' ,function($scope){	
-		console.log('controller!');		
-	}])
-
-})();
+!function(){angular.module("platzigram.controllers",[]).controller("HomeController",[function(){var vm=this;vm.saludo="Hola, soy la home!"}])}();
