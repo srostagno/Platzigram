@@ -104,6 +104,12 @@ gulp.task('buildcss', function(){
     .pipe(gulp.dest('public'));
 });
 
+gulp.task('assets', function(){
+  gulp 
+    .src('src/assets/**/*.*')
+    .pipe(gulp.dest('public'));
+});
+
 gulp.task('browser-sync', function(){
   browserSync.init(["./views/*.pug","./public/**/*.js","./public/**/*.css","./public/views/*.html"], {
     open: false,
@@ -115,7 +121,7 @@ gulp.task('browser-sync', function(){
   });
 });
 
-gulp.task('watch',['templates','stylus','buildcss','scripts','buildjs','angular','browser-sync'], function(){
+gulp.task('watch',['templates','stylus','buildcss','scripts','buildjs','angular','assets','browser-sync'], function(){
   gulp.watch('src/stylus/*.styl', ['stylus']);
   gulp.watch('src/pug/*.pug', ['templates']);
   gulp.watch('src/app.js', ['scripts']);
