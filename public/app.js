@@ -1,1 +1,0 @@
-saludo=function(o){console.log("hola "+o)},saludo("Carlos Sánchez");

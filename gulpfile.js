@@ -13,72 +13,40 @@ var gulp = require('gulp'),
 
 gulp.task('stylus', function () {
   gulp
-    .src('src/app.styl')
+    .src('dev/stylus/app.styl')
     .pipe(stylus({
       compress: true,
       use: nib()
     }))
-    .pipe(gulp.dest('public'));
-});
-
-gulp.task('buildcss', function () {
-  gulp
-    .src('src/**/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(concat('build.min.css'))
-    .pipe(gulp.dest('public'));
-});
-
-gulp.task('buildjs', function(){
-  gulp 
-    .src([
-      'src/**/*.js',
-      '!src/app.js'
-      ])
-    .pipe(plumber({ //Looking for errors.
-        handleError: function (err) {
-          console.log(err);
-          this.emit('end');
-        }
-      }))
-    .pipe(uglify())
-    .pipe(concat('build.min.js'))
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('scripts', function(){
   gulp 
-    .src('src/app.js')
+    .src('dev/app.js')
     .pipe(plumber({ //Looking for errors.
         handleError: function (err) {
           console.log(err);
           this.emit('end');
         }
       }))
-    .pipe(uglify())
-    .pipe(gulp.dest('public'));
-});
-
-gulp.task('assets', function () {
-  gulp
-    .src('assets/*')
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('browser-sync', function(){
-  browserSync.init(["./public/app.js" , "./public/app.css" , "./views/*.pug"],{
-    open: false, //Don't open browsers automatically when I do Gulp, because in Linux for example, it will crash because of operative system security 
-    ghostMode: true, // All my devices ar syncronized when I do scroll, edit forms or do clics
-    reloadOnRestart: true, // If I need to restart my Gulp, my devices will know it and will reload
+  browserSync.init(["./public/js/app.js" , "./public/js/app.css" , "./views/*.pug"],{
+    open: false,
+    ghostMode: true,
+    reloadOnRestart: true,
     options: {
-        proxy: "localhost:3000", //server will be handled using Express
+        proxy: "localhost:3000",
       }
   });
 });
 
-gulp.task('watch',['stylus','scripts','buildcss','buildjs','assets','browser-sync'], function(){
-  gulp.watch('src/*.styl', ['stylus']);
-  gulp.watch('src/app.js', ['scripts']);
+gulp.task('watch',['stylus','scripts','browser-sync'], function(){
+  gulp.watch('dev/stylus/*.styl', ['stylus']);
+  gulp.watch('dev/app.js', ['scripts']);
 });
 
 gulp.task('default', ['watch'], function() {});
