@@ -39,7 +39,7 @@ gulp.task('stylus', function () {
       compress: true,
       use: nib()
     }))
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('scripts', function(){
@@ -54,7 +54,7 @@ gulp.task('scripts', function(){
     .pipe(uglify({
     	mangle: false // Pass false to skip mangling names.
     	}))
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('angular', function(){
@@ -75,9 +75,11 @@ gulp.task('angular', function(){
 gulp.task('buildjs', function(){
   gulp 
     .src([
-		'!src/angular/*.js',
-		'src/lib/*.js'
-	])
+      'src/lib/jquery-2.1.1.min.js',
+      'src/lib/materialize.min.js',
+      'src/lib/angular.js',
+  		'src/lib/angular-route.min.js'
+  	])
     .pipe(plumber({ //Looking for errors.
         handleError: function (err) {
           console.log(err);
@@ -88,7 +90,7 @@ gulp.task('buildjs', function(){
     	mangle: false // Pass false to skip mangling names.
     	}))
     .pipe(concat('build.min.js'))
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('buildcss', function(){
@@ -101,7 +103,7 @@ gulp.task('buildcss', function(){
         }
       }))
     .pipe(concat('build.min.css'))
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('assets', function(){
