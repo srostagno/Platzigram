@@ -8,4 +8,11 @@
 		}
 	})
 
+	.directive('navBar', function(){
+		return {
+			restrict: 'E',
+			templateUrl: '/views/navBar.html'
+		}
+	})
+
 })();

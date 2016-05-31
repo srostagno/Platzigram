@@ -1,0 +1,18 @@
+nav.light-blue.lighten-1(role='navigation')
+	.nav-wrapper.container
+		a#logo-container.brand-logo(href='#') Logo
+		ul.right.hide-on-med-and-down
+			li
+				a(href='#') Navbar Link
+		ul#nav-mobile.side-nav(style='transform: translateX(-100%);')
+			li
+				a(href='#') Navbar Link
+		a.button-collapse(href='#', data-activates='nav-mobile')
+			i.material-icons menu
+
+a(class='dropdown-button btn waves-effect waves-light' data-activates='dropdown1') {{'idiomas' | translate}}
+ul(id='dropdown1' class='dropdown-content')
+	li 
+		a(href="#!" ng-click="changeLanguage('es')") {{'espanol' | translate}}
+	li 
+		a(href="#!" ng-click="changeLanguage('en')") {{'ingles' | translate}}
