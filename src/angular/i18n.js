@@ -6,26 +6,33 @@
 		.translations('es', {
 			bienvenida: "Bienvenido",
 			boton: "Soy un botón",
-			idiomas: "Idiomas",
 			espanol: "Español",
+			idiomas: "Idiomas",
 			ingles: "Inglés",
-			japones: "Japonés"
+			ingresa: "Ingresa",
+			japones: "Japonés",
+			registrate: "Regístrate"
 		})
 		.translations('en', {
 			bienvenida: "Welcome",
 		    boton: "I'm a button",
-		    idiomas: "Languages",
 		    espanol: "Spanish",
+		    idiomas: "Languages",
 		    ingles: "English",
-		    japones: "Japanese"
+		    ingresa: "Sign In",
+		    japones: "Japanese",
+		    registrate: "Sign Up",
+	
 		})
 		.translations('jp', {
 			bienvenida: "ようこそ",
 			boton: "私はボタンです",
-			idiomas: "言語",
 			espanol: "スペイン語",
+			idiomas: "言語",
 			ingles: "英語",
-			japones: "日本語"
+			ingresa: "サインイン",
+			japones: "日本語",
+			registrate: "サインアップ"
 		})
 		$translateProvider.preferredLanguage('es');
 	});

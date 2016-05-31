@@ -14,6 +14,18 @@
 				controller: 'HomeController',
 				controllerAs: 'home'
 			})
+
+			.when('/login', {
+				templateUrl: './views/login.html',
+				controller: 'HomeController',
+				controllerAs: 'home'
+			})
+
+			.when('/register', {
+				templateUrl: './views/register.html',
+				controller: 'HomeController',
+				controllerAs: 'home'
+			})
 			
 			.otherwise({
 				redirectTo: '/'

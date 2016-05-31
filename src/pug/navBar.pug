@@ -1,12 +1,18 @@
 nav.blue-grey.darken-1(role='navigation')
 	.nav-wrapper.container
-		a#logo-container.brand-logo(href='#') Platzigram
+		a#logo-container.brand-logo(href='#/') Platzigram
 		a(class='right dropdown-button btn waves-effect waves-light' data-activates='dropdown1') {{'idiomas' | translate}}
 		ul(id='dropdown1' class='dropdown-content')
 			li 
-				a(href="#!" ng-click="changeLanguage('es')") {{'espanol' | translate}}
+				a(ng-click="changeLanguage('es')") {{'espanol' | translate}}
 			li 
-				a(href="#!" ng-click="changeLanguage('en')") {{'ingles' | translate}}
+				a(ng-click="changeLanguage('en')") {{'ingles' | translate}}
 			li 
-				a(href="#!" ng-click="changeLanguage('jp')") {{'japones' | translate}}
+				a(ng-click="changeLanguage('jp')") {{'japones' | translate}}
+
+		ul(class="right")
+			li
+				a(href="#/login/") {{'ingresa' | translate}}
+			li
+				a(href="#/register/") {{'registrate' | translate}}
 
