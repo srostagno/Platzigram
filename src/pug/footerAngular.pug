@@ -1,0 +1,8 @@
+a(class='dropdown-button btn waves-effect waves-light' data-activates='dropdown1') {{'idiomas' | translate}}
+ul(id='dropdown1' class='dropdown-content')
+	li 
+		a(href="#!" ng-click="changeLanguage('es')") {{'espanol' | translate}}
+	li 
+		a(href="#!" ng-click="changeLanguage('en')") {{'ingles' | translate}}
+
+script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')

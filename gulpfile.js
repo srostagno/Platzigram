@@ -78,7 +78,8 @@ gulp.task('buildjs', function(){
       'src/lib/jquery-2.1.1.min.js',
       'src/lib/materialize.min.js',
       'src/lib/angular.js',
-  		'src/lib/angular-route.min.js'
+      'src/lib/angular-route.min.js',
+  		'src/lib/angular-translate.min.js'
   	])
     .pipe(plumber({ //Looking for errors.
         handleError: function (err) {

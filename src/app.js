@@ -1,7 +1,9 @@
 (function(){
 	var app = angular.module('platzigramApp', [
 		'ngRoute',
-		'platzigram.controllers'
+		'pascalprecht.translate',
+		'platzigram.controllers',
+		'platzigram.directives'
 	])
 
 	.config(['$routeProvider', function($routeProvider){
@@ -16,4 +18,24 @@
 				redirectTo: '/'
 			});
 	}])
+
+	// Traducciónes
+	.config(function($translateProvider) {
+		$translateProvider.translations('es', {
+			bienvenida: "Bienvenido a Platzigram",
+			boton: "Soy un botón",
+			idiomas: "Idiomas",
+			espanol: "Español",
+			ingles: "Inglés"
+		})
+		.translations('en', {
+			bienvenida: "Welcome to Platzigram",
+		    boton: "I'm a button",
+		    idiomas: "Languages",
+		    espanol: "Spanish",
+		    ingles: "English"
+		});
+		$translateProvider.preferredLanguage('es');
+	});
+
 })();
