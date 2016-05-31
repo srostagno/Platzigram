@@ -1,2 +1,2 @@
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script");
-h1{font-family:'Oleo Script'}@media screen and (max-width:768px){body{background:#800080}}
+h1,#logo-container{font-family:'Oleo Script'}#parrafos{margin-top:1em}p{text-align:justify}

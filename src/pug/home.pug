@@ -1,9 +1,31 @@
 nav-bar
 
 div(id="home")
-	h1 {{'bienvenida' | translate}}
-	a(class="waves-effect waves-light btn")
-		i(class="fa fa-instagram" aria-hidden="true" style="margin-right:10px")
-		| {{'boton' | translate}}
+	h1(class="center-align") {{'bienvenida' | translate}}	
+
+	#parrafos
+		.container
+			.row
+				- for (var x = 0; x < 3; x++)
+					.col.s12.m4
+						.card
+							.card-image.waves-effect.waves-block.waves-light
+								img.activator(src='images/office.jpg')
+							.card-content
+								span.card-title.activator.grey-text.text-darken-4
+								| Card Title
+								i.material-icons.right more_vert
+								p
+								a(href='#') {{'boton' | translate}}
+								//- a(class="waves-effect waves-light btn")
+								//- 	i(class="fa fa-instagram" aria-hidden="true" style="margin-right:10px")
+								//- 	| {{'boton' | translate}}
+
+							.card-reveal
+								span.card-title.grey-text.text-darken-4
+								| Card Title
+								i.material-icons.right close
+								p
+								| Here is some more information about this product that is only revealed once clicked on.
 
 footer-angular
