@@ -1,10 +1,14 @@
 var express = require('express');
-
 var app = express();
 
-app.use(express.static('public'));
+//Mongo, conéctate a la base de datos "usuarios"
+mongoose.connect('mongodb://localhost/usuarios'); 
 
-app.set('view engine', 'pug');
+// llamo al modelo user
+require('./models/user');
+
+app.use(express.static('public')); //acceder a los statics en public
+app.set('view engine', 'pug'); //sistema de plantillas: pug (antes llamado Jade)
 
 app.get('/', function (req, res) {
   res.render('index');

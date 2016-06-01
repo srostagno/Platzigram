@@ -3,4 +3,24 @@ nav-bar
 div(id="register")
 	h1(class="center-align") {{'registrate' | translate}}
 
+	.container
+		.row
+			form#form-registro
+				div(class="input-field col s6")
+					input(id="nombre" type="text" class="validate")
+					label(for="nombre") {{'nombre' | translate}}
+				div(class="input-field col s6")
+					input(id="apellido" type="text" class="validate")
+					label(for="apellido") {{'apellido' | translate}}
+				div(class="input-field col s12")
+					input(id="email" type="text" class="validate")
+					label(for="email") {{'email' | translate}}
+				div(class="input-field col s6")
+					input(id="contrasenia" type="text" class="validate")
+					label(for="contrasenia") {{'contrasenia' | translate}}
+				div(class="input-field col s6")
+					input(id="contrasenia_confirmar" type="text" class="validate")
+					label(for="contrasenia_confirmar") {{'contrasenia_confirmar' | translate}}
+
+
 footer-angular

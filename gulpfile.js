@@ -75,10 +75,9 @@ gulp.task('buildjs', function(){
   gulp 
     .src([
       'src/lib/jquery-2.1.1.min.js',
-      'src/lib/materialize.min.js',
       'src/lib/angular.js',
       'src/lib/angular-route.min.js',
-  		'src/lib/angular-translate.min.js'
+      'src/lib/angular-translate.min.js'
   	])
     .pipe(plumber({ //Looking for errors.
         handleError: function (err) {
@@ -86,10 +85,10 @@ gulp.task('buildjs', function(){
           this.emit('end');
         }
       }))
-    .pipe(uglify({
-    	mangle: false // Pass false to skip mangling names.
-    	}))
     .pipe(concat('build.min.js'))
+    .pipe(uglify({
+      mangle: false // Pass false to skip mangling names.
+      }))
     .pipe(gulp.dest('public/js'));
 });
 
