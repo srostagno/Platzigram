@@ -10,6 +10,7 @@
 			idiomas: "Idiomas",
 			ingles: "Inglés",
 			ingresa: "Ingresa",
+			italiano: "Italiano",
 			japones: "Japonés",
 			registrate: "Regístrate"
 		})
@@ -20,6 +21,7 @@
 		    idiomas: "Languages",
 		    ingles: "English",
 		    ingresa: "Sign In",
+		    italiano: "Italian",
 		    japones: "Japanese",
 		    registrate: "Sign Up",
 	
@@ -31,10 +33,24 @@
 			idiomas: "言語",
 			ingles: "英語",
 			ingresa: "サインイン",
+			italiano: "イタリア語",
 			japones: "日本語",
 			registrate: "サインアップ"
 		})
-		$translateProvider.preferredLanguage('es');
+		.translations('it', {
+			bienvenida: "Benvenuto",
+			boton: "Io sono un pulsante",
+			espanol: "Spagnolo",
+			idiomas: "Le lingue",
+			ingles: "Inglese",
+			ingresa: "Accesso",
+			italiano: "Italiano",
+			japones: "Giapponese",
+			registrate: "Registrazione"
+		})
+
+		var idioma_browser = navigator.language.slice(0,2);
+		$translateProvider.preferredLanguage(idioma_browser);
 	});
 
 })();
