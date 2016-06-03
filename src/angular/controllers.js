@@ -7,7 +7,6 @@
 
 		$scope.changeLanguage = function (key) {
 			$translate.use(key);
-			console.log('languagessssssss')
 		};
 
 	}])

@@ -30,6 +30,11 @@ html(lang="es")
 		//- header
 		header-custom
 
+		if(user)
+			span.user #{user.name}
+		else 
+			span.user a {{appName}}
+
 		//- contenido
 		ui-view
 		

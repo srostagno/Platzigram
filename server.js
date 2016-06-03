@@ -64,16 +64,9 @@ if ('development' == app.get('env')) {
 }
 
 app.all('/', function (req, res) {
-  // console.log(req.user, '############################## Usuario #####');
+  console.log(req.user, '############################## Usuario #####');
   res.render('index', { user: req.user });
 });
-
-app.get('/', function(req, res){
-  res.render('home', { 
-    user: req.user
-  });
-});
-
 
 /* Rutas de Passport */
 // Ruta para desloguearse
@@ -103,3 +96,5 @@ app.listen(port, function (err) {
   if (err) return console.log('Hubo un error'), process.exit(1);
   console.log('Platzigram escuchando en el puerto ' + port);
 })
+
+module.exports = app;
