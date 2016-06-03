@@ -1,18 +1,18 @@
 (function(){
 	angular.module('platzigram.directives', [])
 
-	.directive('footerAngular', function(){
+	.directive('headerCustom', function(){
 		return {
 			restrict: 'E',
-			templateUrl: '/views/footerAngular.html'
+			templateUrl: '/views/header-custom.html'			
 		}
 	})
 
-	.directive('navBar', function(){
+	.directive('footerCustom', function(){
 		return {
 			restrict: 'E',
-			templateUrl: '/views/navBar.html'
+			templateUrl: '/views/footer-custom.html'
 		}
-	})
+	});
 
 })();

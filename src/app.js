@@ -1,35 +1,34 @@
 (function(){
 	var app = angular.module('platzigramApp', [
-		'ngRoute',
+		'ui.router',
+		'ui.materialize',
 		'pascalprecht.translate',
 		'platzigram.controllers',
 		'platzigram.directives',
 		'platzigram.i18n'
 	])
 
-	.config(['$routeProvider', function($routeProvider){
-		$routeProvider
-			.when('/', {
+	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+		$stateProvider
+			.state('home', {
+				url: '/',
 				templateUrl: './views/home.html',
-				controller: 'HomeController',
-				controllerAs: 'home'
+				controller: 'HomeController'
 			})
 
-			.when('/login', {
+			.state('login', {
+				url: '/login',
 				templateUrl: './views/login.html',
-				controller: 'HomeController',
-				controllerAs: 'home'
+				controller: 'HomeController'
 			})
 
-			.when('/register', {
+			.state('register', {
+				url: '/register',
 				templateUrl: './views/register.html',
-				controller: 'HomeController',
-				controllerAs: 'home'
-			})
-			
-			.otherwise({
-				redirectTo: '/'
+				controller: 'HomeController'
 			});
+			
+			$urlRouterProvider.otherwise("/");
 	}])	
 
 })();

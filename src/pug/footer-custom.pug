@@ -1,0 +1,18 @@
+footer(ng-controller="HomeController")
+	.container
+		.row
+			div(class="col s6") © {{fecha | date:'yyyy'}} {{appName}}, Inc.
+
+			div(class="col s6")
+
+				a(class='dropdown-button btn waves-effect waves-light' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="false") {{'idiomas' | translate}}
+
+				ul(id='demoDropdown' class='dropdown-content')
+					li 
+						a(ng-click="changeLanguage('es')") {{'espanol' | translate}}
+						li 
+							a(ng-click="changeLanguage('en')") {{'ingles' | translate}}
+						li 
+							a(ng-click="changeLanguage('it')") {{'italiano' | translate}}
+						li 
+							a(ng-click="changeLanguage('jp')") {{'japones' | translate}}

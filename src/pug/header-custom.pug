@@ -1,0 +1,31 @@
+header(ng-controller="HomeController")
+	nav.blue-grey.darken-1(role='navigation')
+		.nav-wrapper.container
+			a#logo-container.brand-logo(href='#/') {{appName}}
+
+			if(user)
+				ul(class="right")
+					li
+						figure(class="avatar")
+							img(src=user.photo , alt=user.name)
+						span #{user.name}
+					li
+						a(href="/logout" class="btn waves-effect waves-light red darken-3")
+							| {{'salir' | translate}}
+							i.material-icons.right exit_to_app
+
+
+			else
+				ul(class="right")
+					li
+						a(ui-sref="login") {{'ingresa' | translate}}
+					li
+						a(ui-sref="register") {{'registrate' | translate}}
+
+	.container
+		.row
+			//- h4 {{'bienvenida' | translate}}
+			//- 	if(user)
+			//- 		span.user #{user.name}
+			//- 	else 
+			//- 		span.user larry

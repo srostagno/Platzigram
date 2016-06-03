@@ -1,12 +1,12 @@
-var gulp 		= require('gulp'),
+var gulp        = require('gulp'),
     stylus     	= require('gulp-stylus'),
     uglify    	= require('gulp-uglify'),
-    nib     	= require('nib'),
-    concat 		= require('gulp-concat'),
-    pug 		= require('gulp-pug'),
-    plumber 	= require('gulp-plumber'),
-    babel 		= require('gulp-babel'),
-    source 		= require('vinyl-source-stream'),
+    nib     	  = require('nib'),
+    concat 		  = require('gulp-concat'),
+    pug 		    = require('gulp-pug'),
+    plumber 	  = require('gulp-plumber'),
+    babel 		  = require('gulp-babel'),
+    source 		  = require('vinyl-source-stream'),
     browserSync = require('browser-sync'), 
     reload      = browserSync.reload;
 
@@ -20,7 +20,7 @@ gulp.task('templates', function () {
         }
 	}))
     .pipe(pug({
-    	pretty: false
+    	pretty: true
 	}))
     .pipe(gulp.dest('public/views'));
 });
@@ -74,10 +74,12 @@ gulp.task('angular', function(){
 gulp.task('buildjs', function(){
   gulp 
     .src([
-      'src/lib/jquery-2.1.1.min.js',
+      'src/lib/jquery-2.2.3.min.js',
       'src/lib/angular.js',
-      'src/lib/angular-route.min.js',
-      'src/lib/angular-translate.min.js'
+      'src/lib/materialize.min.js',
+      'src/lib/angular-materialize.min.js',
+      'src/lib/angular-ui-router.min.js',
+      'src/lib/angular-translate.js'
   	])
     .pipe(plumber({ //Looking for errors.
         handleError: function (err) {
@@ -122,7 +124,7 @@ gulp.task('browser-sync', function(){
   });
 });
 
-gulp.task('watch',['templates','stylus','buildcss','scripts','buildjs','angular','assets','browser-sync'], function(){
+gulp.task('watch',['templates','stylus','buildcss','scripts','angular','assets','browser-sync'], function(){
   gulp.watch('src/stylus/*.styl', ['stylus']);
   gulp.watch('src/pug/*.pug', ['templates']);
   gulp.watch('src/app.js', ['scripts']);

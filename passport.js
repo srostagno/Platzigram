@@ -31,7 +31,7 @@ module.exports = function(passport) {
 		consumerKey			: config.twitter.key,
 		consumerSecret		: config.twitter.secret,
 		callbackURL			: '/auth/twitter/callback'
-	}, function(accessToken, refreshToken, profile, done) {
+	}, function(token, tokenSecret, profile, done) {
 		// Busca en la base de datos si el usuario ya se autenticó en otro
 		// momento y ya está almacenado en ella
 		User.findOne({provider_id: profile.id}, function(err, user) {
@@ -46,6 +46,7 @@ module.exports = function(passport) {
 				name		: profile.displayName,
 				photo		: profile.photos[0].value
 			});
+			
 			//...y lo almacena en la base de datos
 			user.save(function(err) {
 				if(err) throw err;
